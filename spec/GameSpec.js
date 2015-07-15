@@ -6,7 +6,8 @@ describe('Game', function() {
   });
   
   describe('generic rules', function() {
-    xit('starts with a score of 0', function() {
+    it('starts with a score of 0', function() {
+      expect(game.score).toEqual(0);
     });
 
     xit('tracks the pins that have fallen at each roll', function() {
