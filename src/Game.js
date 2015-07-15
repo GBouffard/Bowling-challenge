@@ -14,13 +14,14 @@ Game.prototype.roll = function(pins){
 };
 
 Game.prototype.nextFrame = function(pins) {
-  frameOver = !frameOver
   if (frameOver == true) { this.frameNumber ++ };
+  frameOver = !frameOver;
 };
 
 Game.prototype.rollValidation = function(pins) {
   if ((pins > 10) || (pins < 1)) { throw new Error('This is not a valid input!')};
   if (frameOver == false) { left = 10 - pins };
   if ((frameOver == true) && (pins > left)) { throw new Error('You cannot enter that number!')};
+  if (this.frameNumber > 10) { throw new Error('This game is over!') };
   this.rollsTracker.push(pins);
 };

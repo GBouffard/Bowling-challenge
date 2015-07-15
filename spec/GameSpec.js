@@ -37,7 +37,11 @@ describe('Game', function() {
       expect(function(){game.roll(6)}).toThrowError('You cannot enter that number!');
     });
 
-    xit('knows that it\s not possible to play more than 10 frames', function() {
+    it('it is not possible to play more than 10 frames', function() {
+      for(i=0;i<20;i++) {
+        game.roll(1);
+      };
+      expect(function(){game.roll(1)}).toThrowError('This game is over!');
     });
   });
 
