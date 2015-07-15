@@ -17,7 +17,18 @@ describe('Game', function() {
       expect(game.rollsTracker).toEqual([5, 4, 10]);
     });
 
-    xit('knows which frame we are at each stage', function() {
+    it('knows which frame we are at each stage', function() {
+      game.roll(5);
+      game.roll(4);
+      expect(game.frameNumber).toEqual(2);
+      game.roll(10);
+      expect(game.frameNumber).toEqual(3);
+      game.roll(9);
+      game.roll(1);
+      expect(game.frameNumber).toEqual(4);
+    });
+
+    xit('is not possible to knock more than 10 pins down in a roll', function() {
     });
 
     xit('knows that a 2nd roll cannot knock more pins out than what is left after the first roll', function() {
