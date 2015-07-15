@@ -46,7 +46,11 @@ describe('Game', function() {
   });
 
   describe('from frame 1 to 9', function() {
-    xit('knows that a frame is over when a strike happens', function() {
+    it('knows that a frame is over when a strike happens', function() {
+      game.roll(10);
+      expect(game.frameNumber).toEqual(2);
+      game.roll(10);
+      expect(game.frameNumber).toEqual(3);
     });
   });
 
