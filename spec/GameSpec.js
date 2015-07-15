@@ -28,10 +28,13 @@ describe('Game', function() {
       expect(game.frameNumber).toEqual(4);
     });
 
-    xit('is not possible to knock more than 10 pins down in a roll', function() {
+    it('is not possible to knock more than 10 pins down in a roll or enter a wrong input', function() {
+      expect(function(){game.roll(11)}).toThrowError('This is not a valid input!');
     });
 
-    xit('knows that a 2nd roll cannot knock more pins out than what is left after the first roll', function() {
+    it('a 2nd roll cannot knock more pins out than what is left on the alley', function() {
+      game.roll(5);
+      expect(function(){game.roll(6)}).toThrowError('You cannot enter that number!');
     });
 
     xit('knows that it\s not possible to play more than 10 frames', function() {
