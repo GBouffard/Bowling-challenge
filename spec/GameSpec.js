@@ -55,7 +55,14 @@ describe('Game', function() {
   });
 
   describe('on the 10th frame', function() {
-    xit('knows that a strike on the first roll means an additional 2 rolls to play', function() {
+    beforeEach(function() {
+      for(i=0;i<18;i++) {
+        game.roll(1);
+      };
+    });
+    it('knows that a strike on the first roll means an additional 2 rolls to play', function() {
+      game.roll(10);
+      expect(game.frameNumber).toEqual(10);
     });
 
     xit('knows that a spare on the 2nd roll means an additional roll to play', function() {

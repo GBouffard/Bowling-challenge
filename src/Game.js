@@ -9,7 +9,7 @@ function Game() {
 
 Game.prototype.roll = function(pins){
   this.rollValidation(pins)
-  if (pins == 10) { this.frameNumber ++ 
+  if ((pins == 10) && (this.frameNumber != 10)) { this.frameNumber ++ 
   } else { this.nextFrame(pins); };
 };
 
