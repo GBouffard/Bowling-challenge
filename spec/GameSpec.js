@@ -10,7 +10,11 @@ describe('Game', function() {
       expect(game.score).toEqual(0);
     });
 
-    xit('tracks the pins that have fallen at each roll', function() {
+    it('tracks the pins that have fallen at each roll', function() {
+      game.roll(5);
+      game.roll(4);
+      game.roll(10);
+      expect(game.rollsTracker).toEqual([5, 4, 10]);
     });
 
     xit('knows which frame we are at each stage', function() {
