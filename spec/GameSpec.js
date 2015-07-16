@@ -119,8 +119,29 @@ describe('Game', function() {
     });
   });
 
-  describe('gameplay', function() {
-    xit('a player can play a standard game and get the expected score', function() {
+  describe('gameplay - type of games', function() {
+    it('a player can play a standard game and get the expected score', function() {
+     game.roll(1);
+     game.roll(4);
+     game.roll(4);
+     game.roll(5);
+     game.roll(6);
+     game.roll(4);
+     game.roll(5);
+     game.roll(5);
+     game.roll(10);
+     game.roll(0);
+     game.roll(1);
+     game.roll(7);
+     game.roll(3);
+     game.roll(6);
+     game.roll(4);
+     game.roll(10);
+     game.roll(2);
+     game.roll(8);
+     game.roll(6);
+    expect(game.frameScore).toEqual([5, 14, 29, 49, 60, 61, 77, 97, 117, 133]);
+    expect(game.score).toEqual(133);     
     });
 
     xit('a player can play a gutter game and get the expected score: a big fat 0!', function() {

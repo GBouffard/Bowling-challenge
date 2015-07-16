@@ -15,7 +15,7 @@ Game.prototype.roll = function(pins){
 };
 
 Game.prototype.rollValidation = function(pins) {
-  if (pins > 10 || pins < 1) { throw new Error('This is not a valid input!')};
+  if (pins > 10 || pins < 0) { throw new Error('This is not a valid input!')};
   if (this.frameNumber > 10) { throw new Error('This game is over!') };
   if (frameOver == true && pins > left) { throw new Error('You cannot enter that number!')};
   this.validRoll(pins);
