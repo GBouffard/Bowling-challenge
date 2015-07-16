@@ -1,5 +1,5 @@
 function Game() {
-  this.rollsTracker = [];
+  this.rolls = [];
   this.frameNumber = 1;
   frameOver = false;
   frame10rolls = []
@@ -23,7 +23,8 @@ Game.prototype.rollValidation = function(pins) {
 
 Game.prototype.validRoll = function(pins) {
   if (frameOver == false) { left = 10 - pins };
-  this.rollsTracker.push(pins);
+  this.rolls.push(pins);
+  if (frameOver == false) { this.calculateSpareAtPreviousFrame() };  
 };
 
 Game.prototype.frame1To9Logic = function(pins) {
@@ -44,6 +45,15 @@ Game.prototype.frame10Logic = function(pins) {
 
 Game.prototype.calculateNoStrikeScore = function(){
   this.frameNumber ++;
-  this.score = this.score + this.rollsTracker[this.rollsTracker.length - 1] + this.rollsTracker[this.rollsTracker.length - 2]
+  if (this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2] != 10) {
+    this.score = this.score + this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2]
+    this.frameScore.push(this.score);
+  };
+};
+
+Game.prototype.calculateSpareAtPreviousFrame = function(){
+  if (this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] == 10) {
+  this.score = this.score + 10 + this.rolls[this.rolls.length - 1]
   this.frameScore.push(this.score);
+  };
 };

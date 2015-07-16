@@ -14,7 +14,7 @@ describe('Game', function() {
       game.roll(5);
       game.roll(4);
       game.roll(10);
-      expect(game.rollsTracker).toEqual([5, 4, 10]);
+      expect(game.rolls).toEqual([5, 4, 10]);
     });
 
     it('knows which frame we are at each stage', function() {
@@ -82,7 +82,15 @@ describe('Game', function() {
       expect(game.score).toEqual(17);             
     });
 
-    xit('after a spare, calculates the frame score and adds it to the total only after a spare roll has been made', function() {
+    it('after a spare, calculates the frame score only after a spare roll has been made', function() {
+      game.roll(6);
+      game.roll(4);
+      game.roll(5);
+      game.roll(5);
+      game.roll(1);
+      game.roll(3);
+      expect(game.frameScore).toEqual([15, 26, 30]);
+      expect(game.score).toEqual(30);        
     });
 
     xit('after a strike, calculates the frame score and adds it to the total only after 2 spare rolls have been made', function() {
