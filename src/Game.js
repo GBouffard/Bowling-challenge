@@ -4,8 +4,8 @@ function Game() {
   frameOver = false;
   frame10rolls = []
   left = 10;
-  frameScore = [];
-  this.score = frameScore[frameScore.length - 1] || 0;
+  this.frameScore = [];
+  this.score = 0;
 }
 
 Game.prototype.roll = function(pins){
@@ -32,7 +32,7 @@ Game.prototype.frame1To9Logic = function(pins) {
 };
 
 Game.prototype.notAStrike = function(pins) {
-  if (frameOver == true) { this.frameNumber ++ };
+  if (frameOver == true) { this.calculateNoStrikeScore() };
   frameOver = !frameOver;
 };
 
@@ -40,4 +40,10 @@ Game.prototype.frame10Logic = function(pins) {
   frame10rolls.push(pins);
   if (frame10rolls.length == 2 && frame10rolls[0] + frame10rolls[1] < 10) { this.frameNumber ++ };
   if (frame10rolls.length == 3) { this.frameNumber ++ };
+};
+
+Game.prototype.calculateNoStrikeScore = function(){
+  this.frameNumber ++;
+  this.score = this.score + this.rollsTracker[this.rollsTracker.length - 1] + this.rollsTracker[this.rollsTracker.length - 2]
+  this.frameScore.push(this.score);
 };

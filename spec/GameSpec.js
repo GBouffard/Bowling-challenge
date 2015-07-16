@@ -41,8 +41,6 @@ describe('Game', function() {
       for(i=0;i<20;i++) {
         game.roll(1);
       };
-      // console.log(game.frameNumber); 10  --- should be 11!
-      // console.log(game.frameOver); false
       expect(function(){game.roll(1)}).toThrowError('This game is over!');
     });
   });
@@ -75,7 +73,13 @@ describe('Game', function() {
   });
 
   describe('total score calculation', function() {
-    xit('calculates the frame score and adds it to the total right away if the sum of that frame is inferior to 10', function() {
+    it('calculates the frame score right away if it wasn\'t a spare or a strike', function() {
+      game.roll(5);
+      game.roll(4);
+      game.roll(7);
+      game.roll(1);
+      expect(game.frameScore).toEqual([9, 17]);
+      expect(game.score).toEqual(17);             
     });
 
     xit('after a spare, calculates the frame score and adds it to the total only after a spare roll has been made', function() {
