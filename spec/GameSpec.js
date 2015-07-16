@@ -103,6 +103,20 @@ describe('Game', function() {
       expect(game.frameScore).toEqual([19, 28, 52]);
       expect(game.score).toEqual(52);
     });
+
+    it('calulcates the correct score on the 10th frame', function(){
+     for(i=0;i<14;i++) {
+        game.roll(1);
+      };
+     game.roll(10);
+     game.roll(4);
+     game.roll(6);
+     game.roll(6);
+     game.roll(4);
+     game.roll(8);
+    expect(game.frameScore).toEqual([2, 4, 6, 8, 10, 12, 14, 34, 50, 68]);
+    expect(game.score).toEqual(68);
+    });
   });
 
   describe('gameplay', function() {
