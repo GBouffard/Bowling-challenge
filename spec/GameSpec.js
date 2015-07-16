@@ -144,14 +144,18 @@ describe('Game', function() {
     expect(game.score).toEqual(133);     
     });
 
-    it('A gutter game test gives the expected results: a big fat 0!', function() {
+    it('A gutter game gives the expected results: a big fat 0!', function() {
      for(i=0;i<20;i++) {
         game.roll(0);
       };
     expect(game.score).toEqual(0);
     });
 
-    xit('A perfect game gives the expected results: an amazing 300!', function() {
+    it('A perfect game gives the expected results: an amazing 300!', function() {
+     for(i=0;i<12;i++) {
+        game.roll(10);
+      };
+    expect(game.score).toEqual(300);
     });
   });
 
