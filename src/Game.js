@@ -28,6 +28,7 @@ Game.prototype.validRoll = function(pins) {
 };
 
 Game.prototype.frame1To9Logic = function(pins) {
+  this.doubleStrikeBefore();
   if (pins == 10) { this.frameNumber ++ 
   } else { this.notAStrike(pins); };
 };
@@ -45,6 +46,7 @@ Game.prototype.frame10Logic = function(pins) {
 
 Game.prototype.calculateNoStrikeScore = function(){
   this.frameNumber ++;
+  this.calculateStrikeAtPreviousFrame();
   if (this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2] != 10) {
     this.score = this.score + this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2]
     this.frameScore.push(this.score);
@@ -57,3 +59,19 @@ Game.prototype.calculateSpareAtPreviousFrame = function(){
   this.frameScore.push(this.score);
   };
 };
+
+Game.prototype.calculateStrikeAtPreviousFrame = function(){
+  if (this.rolls[this.rolls.length - 3] == 10) {
+  this.score = this.score + 10 + this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2];
+  this.frameScore.push(this.score);
+  };
+};
+
+Game.prototype.doubleStrikeBefore = function(){
+  if (this.rolls[this.rolls.length - 3] == 10 && this.rolls[this.rolls.length - 2] == 10) {
+  this.score = this.score + 20 + this.rolls[this.rolls.length - 1];
+  this.frameScore.push(this.score);
+  };
+};
+
+

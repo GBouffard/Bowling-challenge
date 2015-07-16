@@ -90,10 +90,18 @@ describe('Game', function() {
       game.roll(1);
       game.roll(3);
       expect(game.frameScore).toEqual([15, 26, 30]);
-      expect(game.score).toEqual(30);        
+      expect(game.score).toEqual(30);
     });
 
-    xit('after a strike, calculates the frame score and adds it to the total only after 2 spare rolls have been made', function() {
+    it('after a strike, calculates the frame score only after 2 spare rolls have been made', function() {
+      game.roll(10);
+      game.roll(4);
+      game.roll(5);
+      game.roll(10);
+      game.roll(10);
+      game.roll(4);
+      expect(game.frameScore).toEqual([19, 28, 52]);
+      expect(game.score).toEqual(52);
     });
   });
 
