@@ -41,6 +41,8 @@ describe('Game', function() {
       for(i=0;i<20;i++) {
         game.roll(1);
       };
+      // console.log(game.frameNumber); 10  --- should be 11!
+      // console.log(game.frameOver); false
       expect(function(){game.roll(1)}).toThrowError('This game is over!');
     });
   });
@@ -56,16 +58,19 @@ describe('Game', function() {
 
   describe('on the 10th frame', function() {
     beforeEach(function() {
-      for(i=0;i<18;i++) {
-        game.roll(1);
+      for(i=0;i<18;i++) { 
+        game.roll(1);  
       };
     });
-    it('knows that a strike on the first roll means an additional 2 rolls to play', function() {
+    it('knows that a strike on the first roll means an additional 2 rolls to play', function() {    
       game.roll(10);
       expect(game.frameNumber).toEqual(10);
     });
 
-    xit('knows that a spare on the 2nd roll means an additional roll to play', function() {
+    it('knows that a spare on the 2nd roll means an additional roll to play', function() {            
+      game.roll(4);
+      game.roll(6); 
+      expect(game.frameNumber).toEqual(10);
     });
   });
 
