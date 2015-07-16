@@ -120,7 +120,7 @@ describe('Game', function() {
   });
 
   describe('gameplay - type of games', function() {
-    it('a player can play a standard game and get the expected score', function() {
+    it('A full 10 frames random game gives the expected results', function() {
      game.roll(1);
      game.roll(4);
      game.roll(4);
@@ -144,10 +144,14 @@ describe('Game', function() {
     expect(game.score).toEqual(133);     
     });
 
-    xit('a player can play a gutter game and get the expected score: a big fat 0!', function() {
+    it('A gutter game test gives the expected results: a big fat 0!', function() {
+     for(i=0;i<20;i++) {
+        game.roll(0);
+      };
+    expect(game.score).toEqual(0);
     });
 
-    xit('a player can play a perfect game and get the expected score: an amazing 300!', function() {
+    xit('A perfect game gives the expected results: an amazing 300!', function() {
     });
   });
 
