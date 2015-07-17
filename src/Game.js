@@ -3,7 +3,6 @@ function Game() {
   this.frameNumber = 1;
   frameOver = false;
   frame10rolls = []
-  left = 10;
   this.frameScore = [];
   this.score = 0;
 }
@@ -69,8 +68,8 @@ Game.prototype.notA10SumCalculator = function() {
 
 Game.prototype.spareCalculator = function(){
   if (this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] == 10 && frame10rolls.length < 2) {
-  this.score = this.score + 10 + this.rolls[this.rolls.length - 1]
-  this.frameScore.push(this.score);
+    this.score = this.score + 10 + this.rolls[this.rolls.length - 1]
+    this.frameScore.push(this.score);
   };
 };
 

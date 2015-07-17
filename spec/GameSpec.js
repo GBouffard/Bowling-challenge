@@ -158,9 +158,4 @@ describe('Game', function() {
     expect(game.score).toEqual(300);
     });
   });
-
-  describe('to restart a game', function() {
-    xit('a player has the option to reset the total score to 0', function() {
-    });
-  });
 });
