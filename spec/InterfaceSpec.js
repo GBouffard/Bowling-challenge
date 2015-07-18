@@ -18,7 +18,9 @@ describe('Interface', function() {
   });
 
   describe('Playing frame number 1', function() {  
-    xit('A first roll that isn\'t a strike outputs the pins knocked out in the first box', function() { 
+    it('A first roll that isn\'t a strike outputs the pins knocked out in the first box', function() { 
+      $('#hit5').click();
+      expect("#box1").toHaveText(5);
     });
 
     xit('A second roll that dosen\'t make a spare outputs the pins knocked out in the second box', function() { 
