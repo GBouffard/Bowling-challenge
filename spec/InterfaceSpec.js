@@ -7,7 +7,13 @@ describe('Interface', function() {
   });
 
   describe('At the beginning', function() {
-    xit('starts with empty boxes for the rolls and the scores', function() { 
+    it('starts with empty boxes for the rolls and the scores', function() { 
+      for(n=1;n<22;n++) {
+        expect("#box"+n).toBeEmpty();
+      };
+      for(n=1;n<1;n++) {
+        expect("#score"+n).toBeEmpty();
+      };
     });
   });
 
