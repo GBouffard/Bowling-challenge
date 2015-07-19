@@ -37,11 +37,15 @@ describe('Interface', function() {
     });
 
     it('if a strike is made, the output in the 1st box appears as a X', function() { 
-        $('#hit10').click();
+      $('#hit10').click();
       expect("#box1").toHaveText('X');
     });
 
-    xit('if a strike is made, the output in the 2nd box appears as empty', function() { 
+    it('if a strike is made, the output in the 2nd box appears as empty', function() { 
+      $('#hit10').click();
+      $('#hit10').click();
+      expect("#box2").toBeEmpty();
+
     });
 
     xit('if a player tries to knock more pins out than allowed, an error message is displayed', function() { 
