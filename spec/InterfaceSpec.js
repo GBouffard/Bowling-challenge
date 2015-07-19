@@ -2,7 +2,7 @@ describe('Interface', function() {
 
   beforeEach(function() {
     jasmine.getFixtures().fixturesPath = '.';
-    loadFixtures('views/index.html');
+    loadFixtures('views/index.ejs');
     $.holdReady(false);
   });
 
