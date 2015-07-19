@@ -1,7 +1,7 @@
 function Game() {
   this.rolls = [];
   this.frameNumber = 1;
-  frameOver = false;
+  this.frameOver = false;
   frame10rolls = []
   this.frameScore = [];
   this.score = 0;
@@ -16,14 +16,14 @@ Game.prototype.roll = function(pins){
 Game.prototype.rollValidation = function(pins) {
   if (pins > 10 || pins < 0) { throw new Error('This is not a valid input!')};
   if (this.frameNumber > 10) { throw new Error('This game is over!') };
-  if (frameOver == true && pins > left) { throw new Error('You cannot enter that number!')};
+  if (this.frameOver == true && pins > this.leftPins) { throw new Error('You cannot enter that number!')};
   this.validRoll(pins);
 };
 
 Game.prototype.validRoll = function(pins) {
-  if (frameOver == false) { left = 10 - pins };
+  if (this.frameOver == false) { this.leftPins = 10 - pins };
   this.rolls.push(pins);
-  if (frameOver == false && this.frameNumber < 10) { this.caclulateOnBall1() };  
+  if (this.frameOver == false && this.frameNumber < 10) { this.caclulateOnBall1() };  
 };
 
 Game.prototype.caclulateOnBall1 = function(){
@@ -37,8 +37,8 @@ Game.prototype.frame1To9Logic = function(pins) {
 };
 
 Game.prototype.notAStrike = function(pins) {
-  if (frameOver == true) { this.noStrikeNoSpareCalculator() };
-  frameOver = !frameOver;
+  if (this.frameOver == true) { this.noStrikeNoSpareCalculator() };
+  this.frameOver = !this.frameOver;
 };
 
 Game.prototype.frame10Logic = function(pins) {

@@ -24,13 +24,16 @@ describe('Interface', function() {
     });
 
     it('A second roll that dosen\'t make a spare outputs the pins knocked out in the second box', function() { 
-        $('#hit5').click();
-        $('#hit3').click();        
+      $('#hit5').click();
+      $('#hit3').click();        
       expect("#box1").toHaveText(5);
       expect("#box2").toHaveText(3);
     });
 
-    xit('if a spare is made, the output in the 2nd box appears as a /', function() { 
+    it('if a spare is made, the output in the 2nd box appears as a /', function() { 
+      $('#hit7').click();
+      $('#hit3').click();        
+      expect("#box2").toHaveText('/');      
     });
 
     xit('if a strike is made, the output in the 1st box appears as a X', function() { 
@@ -49,6 +52,10 @@ describe('Interface', function() {
   });
 
   describe('Playing frame number 10', function() {  
+
+    xit('writes a / in the 2nd box if a spare is made', function() { 
+    });
+
     xit('writes a X in all of the 3 boxes if 3 strikes are made', function() { 
     });
   });

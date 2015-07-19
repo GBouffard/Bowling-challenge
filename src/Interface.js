@@ -3,63 +3,72 @@ var game = new Game();
 $(document).ready(function() {
   var increment = 1;
 
-  function updateBoxes() {
-    $('#box'+String(increment)).text(game.rolls[game.rolls.length -1]);
+  function updateScore() {
+    game.roll(pins);
+    writeInBoxes();
     increment++;
   };
 
+  function writeInBoxes() {
+    if(game.leftPins == pins && game.frameOver == false) {
+      $('#box'+String(increment)).text('/');
+    } else {
+      $('#box'+String(increment)).text(game.rolls[game.rolls.length -1]);
+    };
+  };
+
   $('#hit0').click(function(){
-    game.roll(0);
-    updateBoxes();
+    pins = 0;
+    updateScore();
   });
 
   $('#hit1').click(function(){
-    game.roll(1);
-    updateBoxes();
+    pins = 1;
+    updateScore();
   });
 
   $('#hit2').click(function(){
-    game.roll(2);
-    updateBoxes();
+    pins = 2;
+    updateScore();
   });
 
   $('#hit3').click(function(){
-    game.roll(3);
-    updateBoxes();
+    pins = 3;
+    updateScore();
   });
 
   $('#hit4').click(function(){
-    game.roll(4);
-    updateBoxes();
+    pins = 4;
+    updateScore();
   });
 
   $('#hit5').click(function(){
-    game.roll(5);
-    updateBoxes();
+    pins = 5;
+    updateScore();
   });
 
   $('#hit6').click(function(){
-    game.roll(6);
-    updateBoxes();
+    pins = 6;
+    updateScore();
   });
 
   $('#hit7').click(function(){
-    game.roll(7);
-    updateBoxes();
+    pins = 7;
+    updateScore();
   });
 
   $('#hit8').click(function(){
-    game.roll(8);
-    updateBoxes();
+    pins = 8;
+    updateScore();
   });
 
   $('#hit9').click(function(){
-    game.roll(9);
-    updateBoxes();
+    pins = 9;
+    updateScore();
   });
 
   $('#hit10').click(function(){
-    game.roll(10);
-    updateBoxes();
+    pins = 10;
+    updateScore();
   });
 });
