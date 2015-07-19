@@ -36,7 +36,9 @@ describe('Interface', function() {
       expect("#box2").toHaveText('/');      
     });
 
-    xit('if a strike is made, the output in the 1st box appears as a X', function() { 
+    it('if a strike is made, the output in the 1st box appears as a X', function() { 
+        $('#hit10').click();
+      expect("#box1").toHaveText('X');
     });
 
     xit('if a strike is made, the output in the 2nd box appears as empty', function() { 

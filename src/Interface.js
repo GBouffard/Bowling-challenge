@@ -68,7 +68,8 @@ $(document).ready(function() {
   });
 
   $('#hit10').click(function(){
-    pins = 10;
-    updateScore();
+    game.roll(10);
+    $('#box'+String(increment)).text('X');
+    increment = increment+2;
   });
 });
