@@ -23,7 +23,11 @@ describe('Interface', function() {
       expect("#box1").toHaveText(5);
     });
 
-    xit('A second roll that dosen\'t make a spare outputs the pins knocked out in the second box', function() { 
+    it('A second roll that dosen\'t make a spare outputs the pins knocked out in the second box', function() { 
+        $('#hit5').click();
+        $('#hit3').click();        
+      expect("#box1").toHaveText(5);
+      expect("#box2").toHaveText(3);
     });
 
     xit('if a spare is made, the output in the 2nd box appears as a /', function() { 
