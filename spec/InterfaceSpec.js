@@ -62,7 +62,26 @@ describe('Interface', function() {
   });
 
   describe('Playing frames numbers 2 to 9', function() {  
-    xit('the behaviors tested above for the first frame apply for all these frames', function() { 
+    it('the behaviors tested above for the first frame apply for frames 2 to 9', function() { 
+      random9FramesGame();
+      expect("#box1").toHaveText('7');
+      expect("#box2").toHaveText('2');
+      expect("#box3").toHaveText('X');
+      expect("#box4").toBeEmpty();
+      expect("#box5").toHaveText('6');
+      expect("#box6").toHaveText('/');  
+      expect("#box7").toHaveText('X');
+      expect("#box8").toBeEmpty();
+      expect("#box9").toHaveText('7');      
+      expect("#box10").toHaveText('/');
+      expect("#box11").toHaveText('7');
+      expect("#box12").toHaveText('1');
+      expect("#box13").toHaveText('9');
+      expect("#box14").toHaveText('0');
+      expect("#box15").toHaveText('0');
+      expect("#box16").toHaveText('/');
+      expect("#box17").toHaveText('5');
+      expect("#box18").toHaveText('/');
     });
   });
 
@@ -97,3 +116,22 @@ describe('Interface', function() {
     });
   });
 });
+
+function random9FramesGame() {
+  $('#hit7').click();
+  $('#hit2').click();
+  $('#hit10').click();
+  $('#hit6').click();
+  $('#hit4').click(); 
+  $('#hit10').click();
+  $('#hit7').click();
+  $('#hit3').click();
+  $('#hit7').click();
+  $('#hit1').click();
+  $('#hit9').click();
+  $('#hit0').click();
+  $('#hit0').click();
+  $('#hit10').click();
+  $('#hit5').click();
+  $('#hit5').click();
+};
