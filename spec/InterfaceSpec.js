@@ -47,6 +47,12 @@ describe('Interface', function() {
       expect("#box2").toBeEmpty();
     });
 
+    it('a spare with 0 and 10 still outputs / in the 2nd box and not a X', function() { 
+      $('#hit0').click();
+      $('#hit10').click();
+      expect("#box2").toHaveText('/');
+    });
+
     it('if a player tries to knock more pins out than allowed, an error message is displayed', function() { 
       $('#hit8').click();  
       expect(function(){$('#hit7').click()}).toThrowError('You cannot enter that number!');

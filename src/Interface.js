@@ -76,8 +76,13 @@ $(document).ready(function() {
   });
 
   $('#hit10').click(function(){
-    game.roll(10);
-    $('#box'+String(increment)).text('X');
-    increment = increment+2;
+    if (game.frameOver == false) {
+      game.roll(10);
+      $('#box'+String(increment)).text('X');
+      increment = increment+2;
+    } else {
+      pins = 10;
+      updateScore();
+    };
   });
 });

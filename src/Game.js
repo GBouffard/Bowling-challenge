@@ -32,7 +32,7 @@ Game.prototype.caclulateOnBall1 = function(){
 };
 
 Game.prototype.frame1To9Logic = function(pins) {
-  if (pins == 10) { this.frameNumber ++ 
+  if (pins == 10 && this.frameOver == false) { this.frameNumber ++ 
   } else { this.notAStrike(pins); };
 };
 
