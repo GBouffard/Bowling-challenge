@@ -21,9 +21,9 @@ Game.prototype.rollValidation = function(pins) {
 };
 
 Game.prototype.validRoll = function(pins) {
-  if (this.frameOver == false) { this.leftPins = 10 - pins };
+  if (this.frameOver == false) { this.leftPins = 10 - pins } else { this.leftPins = 10 };
   this.rolls.push(pins);
-  if (this.frameOver == false && this.frameNumber < 10) { this.caclulateOnBall1() };  
+  if (this.frameOver == false && this.frameNumber < 10 ) { this.caclulateOnBall1() };  
 };
 
 Game.prototype.caclulateOnBall1 = function(){

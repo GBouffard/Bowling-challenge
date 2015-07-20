@@ -32,7 +32,7 @@ describe('Interface', function() {
 
     it('if a spare is made, the output in the 2nd box appears as a /', function() { 
       $('#hit7').click();
-      $('#hit3').click();        
+      $('#hit3').click();
       expect("#box2").toHaveText('/');      
     });
 
@@ -86,8 +86,15 @@ describe('Interface', function() {
   });
 
   describe('Playing frame number 10', function() {  
+    beforeEach(function() {
+      random9FramesGame()
+    });
 
-    xit('writes a / in the 2nd box if a spare is made', function() { 
+    it('writes a / in the 2nd box if a spare is made', function() { 
+      $('#hit5').click();
+      $('#hit5').click();        
+      expect("#box19").toHaveText('5');
+      expect("#box20").toHaveText('/');
     });
 
     xit('writes a X in all of the 3 boxes if 3 strikes are made', function() { 

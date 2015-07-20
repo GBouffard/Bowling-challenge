@@ -2,16 +2,18 @@ var game = new Game();
 
 $(document).ready(function() {
   var increment = 1;
+  var SparesWritter = 10;
 
   function updateScore() {
     game.roll(pins);
     writeInBoxes();
+    SparesWritter = game.leftPins
     increment++;
   };
 
   function writeInBoxes() {
     errorTracker();
-    if(game.leftPins == pins && game.frameOver == false) {
+    if( SparesWritter == pins && game.frameOver == false) {
       $('#box'+String(increment)).text('/');
     } else {
       $('#box'+String(increment)).text(game.rolls[game.rolls.length -1]);
@@ -77,12 +79,16 @@ $(document).ready(function() {
 
   $('#hit10').click(function(){
     if (game.frameOver == false) {
-      game.roll(10);
-      $('#box'+String(increment)).text('X');
-      increment = increment+2;
+      strikeHappened();
     } else {
       pins = 10;
       updateScore();
     };
   });
+
+  function strikeHappened(){
+    game.roll(10);
+    $('#box'+String(increment)).text('X');
+    increment = increment+2;
+  };
 });
