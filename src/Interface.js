@@ -10,10 +10,18 @@ $(document).ready(function() {
   };
 
   function writeInBoxes() {
+    errorTracker();
     if(game.leftPins == pins && game.frameOver == false) {
       $('#box'+String(increment)).text('/');
     } else {
       $('#box'+String(increment)).text(game.rolls[game.rolls.length -1]);
+    };
+  };
+
+  function errorTracker() {
+    $('#error').html('');
+    window.onerror = function () {
+      $('#error').html('You cannot choose that number!');
     };
   };
 

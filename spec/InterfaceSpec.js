@@ -45,10 +45,13 @@ describe('Interface', function() {
       $('#hit10').click();
       $('#hit10').click();
       expect("#box2").toBeEmpty();
-
     });
 
-    xit('if a player tries to knock more pins out than allowed, an error message is displayed', function() { 
+    it('if a player tries to knock more pins out than allowed, an error message is displayed', function() { 
+      $('#hit8').click();  
+      expect(function(){$('#hit7').click()}).toThrowError('You cannot enter that number!');
+      expect(window.onerror).not.toBe(null);
+      expect("#error").not.toBe(null);
     });
   });
 
