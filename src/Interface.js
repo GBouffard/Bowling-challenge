@@ -9,6 +9,7 @@ $(document).ready(function() {
     writeInBoxes();
     SparesWritter = game.leftPins
     writeInScores();
+    increment++;
   };
 
   function writeInBoxes() {
@@ -21,10 +22,9 @@ $(document).ready(function() {
   };
 
   function writeInScores() {
-  for(n=1;n<11;n++) {
-    $('#score'+String(n)).text(game.frameScore[n-1]);
-  };
-    increment++;
+    for(n=1;n<11;n++) {
+      $('#score'+String(n)).text(game.frameScore[n-1]);
+    };
   };
 
   function errorTracker() {
@@ -95,8 +95,9 @@ $(document).ready(function() {
 
   function strikeHappened(){
     game.roll(10);
+    writeInScores();
     $('#box'+String(increment)).text('X');
-    if (game.frameNumber != 10) { increment = increment+2 } 
-    else { increment++ };
+    if (game.frameNumber != 10) { increment++ };
+    increment++;
   };
 });

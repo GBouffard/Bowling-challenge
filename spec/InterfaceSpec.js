@@ -185,7 +185,11 @@ describe('Interface', function() {
       expect("#score10").toHaveText('0');
     });
 
-    xit('A perfect game gives the expected visual results: an amazing 300!', function() { 
+    it('A perfect game gives the expected visual results: an amazing 300!', function() { 
+      for(i=0;i<12;i++) {
+        $('#hit10').click();
+      };
+      expect("#score10").toHaveText('300');
     });
   });
 
