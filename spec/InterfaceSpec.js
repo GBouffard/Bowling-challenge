@@ -178,7 +178,11 @@ describe('Interface', function() {
       expect("#score10").toHaveText('164');
     });
 
-    xit('A gutter game gives the expected visual results: a big fat 0!', function() { 
+    it('A gutter game gives the expected visual results: a big fat 0!', function() { 
+      for(i=0;i<20;i++) {
+        $('#hit0').click();
+      };
+      expect("#score10").toHaveText('0');
     });
 
     xit('A perfect game gives the expected visual results: an amazing 300!', function() { 
