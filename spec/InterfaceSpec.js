@@ -108,7 +108,10 @@ describe('Interface', function() {
   });
 
   describe('Score displays', function() {  
-    xit('2 first rolls immediately output the score in the 1st score box', function() { 
+    it('2 first rolls not being spare or strike immediately output the score in the 1st score box', function() { 
+      $('#hit5').click();
+      $('#hit3').click();        
+      expect("#score1").toHaveText('8');
     });
 
     xit('A full game excluding strikes and spares output the 10 correct cumulative scores', function() { 

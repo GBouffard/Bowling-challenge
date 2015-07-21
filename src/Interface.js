@@ -8,7 +8,7 @@ $(document).ready(function() {
     game.roll(pins);
     writeInBoxes();
     SparesWritter = game.leftPins
-    increment++;
+    writeInScores();
   };
 
   function writeInBoxes() {
@@ -18,6 +18,11 @@ $(document).ready(function() {
     } else {
       $('#box'+String(increment)).text(game.rolls[game.rolls.length -1]);
     };
+  };
+
+  function writeInScores() {
+    $('#score1').text(game.frameScore[0]);
+    increment++;
   };
 
   function errorTracker() {
