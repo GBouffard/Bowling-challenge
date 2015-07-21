@@ -100,4 +100,27 @@ $(document).ready(function() {
     if (game.frameNumber != 10) { increment++ };
     increment++;
   };
+
+  $('#newScoreSheet').click(function(){
+    initialValues();
+    clearTable();
+  });
+
+  function initialValues() {
+    game.rolls = [];
+    game.frameNumber = 1;
+    game.frameOver = false;
+    game.frame10rolls = []
+    game.frameScore = [];
+    game.score = 0;
+  };
+
+  function clearTable() {
+    for(n=1;n<22;n++) {
+      $('#box'+n).text('');
+    };
+    for(n=1;n<11;n++) {
+      $('#score'+n).text('');
+    };    
+  };
 });

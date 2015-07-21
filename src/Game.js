@@ -2,7 +2,7 @@ function Game() {
   this.rolls = [];
   this.frameNumber = 1;
   this.frameOver = false;
-  frame10rolls = []
+  this.frame10rolls = []
   this.frameScore = [];
   this.score = 0;
 }
@@ -42,15 +42,15 @@ Game.prototype.notAStrike = function(pins) {
 };
 
 Game.prototype.frame10Logic = function(pins) {
-  frame10rolls.push(pins);
-  if (frame10rolls.length == 1) { this.caclulateOnBall1() };
-  if (frame10rolls.length == 2) { this.secondRollat10() };
-  if (frame10rolls.length == 3) { this.closingRoll() };
+  this.frame10rolls.push(pins);
+  if (this.frame10rolls.length == 1) { this.caclulateOnBall1() };
+  if (this.frame10rolls.length == 2) { this.secondRollat10() };
+  if (this.frame10rolls.length == 3) { this.closingRoll() };
 };
 
 Game.prototype.secondRollat10 = function(){
   if (this.rolls[this.rolls.length - 3] == 10) { this.strikeCalculator() };
-  if (frame10rolls[0] + frame10rolls[1] < 10) { this.noStrikeNoSpareCalculator() };
+  if (this.frame10rolls[0] + this.frame10rolls[1] < 10) { this.noStrikeNoSpareCalculator() };
 };
 
 Game.prototype.noStrikeNoSpareCalculator = function(){
@@ -67,7 +67,7 @@ Game.prototype.notA10SumCalculator = function() {
 };
 
 Game.prototype.spareCalculator = function(){
-  if (this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] == 10 && frame10rolls.length < 2) {
+  if (this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] == 10 && this.frame10rolls.length < 2) {
     this.score = this.score + 10 + this.rolls[this.rolls.length - 1]
     this.frameScore.push(this.score);
   };
@@ -79,19 +79,19 @@ Game.prototype.strikeCalculator = function(){
 };
 
 Game.prototype.doubleStrikeCalculator = function(){
-  if (this.rolls[this.rolls.length - 3] == 10 && this.rolls[this.rolls.length - 2] == 10) {
+  if (this.rolls[this.rolls.length - 3] == 10 && this.rolls[this.rolls.length - 2] == 10 && this.rolls[this.rolls.length - 4] != 0) {
     this.score = this.score + 20 + this.rolls[this.rolls.length - 1];
     this.frameScore.push(this.score);
   };
 };
 
 Game.prototype.closingRoll = function() {
-  if (frame10rolls[0] == 10) { this.strikeCalculator() 
-  } else if (frame10rolls[0] + frame10rolls[1] == 10) { this.finalSpareCalculator() };
+  if (this.frame10rolls[0] == 10) { this.strikeCalculator() 
+  } else if (this.frame10rolls[0] + this.frame10rolls[1] == 10) { this.finalSpareCalculator() };
   this.frameNumber ++
 };
 
 Game.prototype.finalSpareCalculator = function(){
-  this.score = this.score + 10 + frame10rolls[frame10rolls.length - 1];
+  this.score = this.score + 10 + this.frame10rolls[this.frame10rolls.length - 1];
   this.frameScore.push(this.score);
 };

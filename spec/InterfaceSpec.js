@@ -11,7 +11,7 @@ describe('Interface', function() {
       for(n=1;n<22;n++) {
         expect("#box"+n).toBeEmpty();
       };
-      for(n=1;n<1;n++) {
+      for(n=1;n<11;n++) {
         expect("#score"+n).toBeEmpty();
       };
     });
@@ -194,7 +194,15 @@ describe('Interface', function() {
   });
 
   describe('Start a new game', function() {
-    xit('starts with a blank new scoresheet if New Scoresheet is being clicked', function() { 
+    it('starts with a blank new scoresheet if New Scoresheet is being clicked', function() { 
+      random9FramesGame();
+      $('#newScoreSheet').click();
+      for(n=1;n<22;n++) {
+        expect("#box"+n).toBeEmpty();
+      };
+      for(n=1;n<11;n++) {
+        expect("#score"+n).toBeEmpty();
+      };
     });
   });
 });
