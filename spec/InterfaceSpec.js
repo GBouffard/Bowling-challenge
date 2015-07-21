@@ -114,7 +114,37 @@ describe('Interface', function() {
       expect("#score1").toHaveText('8');
     });
 
-    xit('A full game excluding strikes and spares output the 10 correct cumulative scores', function() { 
+    it('A full game excluding strikes and spares output the 10 correct cumulative scores', function() { 
+      $('#hit5').click();
+      $('#hit1').click();        
+      expect("#score1").toHaveText('6');
+      $('#hit4').click();
+      $('#hit5').click();        
+      expect("#score2").toHaveText('15');
+      $('#hit5').click();
+      $('#hit2').click();        
+      expect("#score3").toHaveText('22');
+      $('#hit9').click();
+      $('#hit0').click();        
+      expect("#score4").toHaveText('31');
+      $('#hit0').click();
+      $('#hit1').click();        
+      expect("#score5").toHaveText('32');
+      $('#hit7').click();
+      $('#hit2').click();        
+      expect("#score6").toHaveText('41');
+      $('#hit5').click();
+      $('#hit3').click();        
+      expect("#score7").toHaveText('49');
+      $('#hit2').click();
+      $('#hit2').click();        
+      expect("#score8").toHaveText('53');
+      $('#hit8').click();
+      $('#hit0').click();        
+      expect("#score9").toHaveText('61');
+      $('#hit5').click();
+      $('#hit3').click();        
+      expect("#score10").toHaveText('69');    
     });
 
     xit('A full game including strikes and spares output the 10 correct cumulative scores', function() { 

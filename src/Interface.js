@@ -21,7 +21,9 @@ $(document).ready(function() {
   };
 
   function writeInScores() {
-    $('#score1').text(game.frameScore[0]);
+  for(n=1;n<11;n++) {
+    $('#score'+String(n)).text(game.frameScore[n-1]);
+  };
     increment++;
   };
 
