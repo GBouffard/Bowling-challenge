@@ -17,7 +17,7 @@ describe('Interface', function() {
     });
   });
 
-  describe('Playing frame number 1', function() {  
+  describe('Playing frame number 1', function() {
     it('A first roll that isn\'t a strike outputs the pins knocked out in the first box', function() { 
       $('#hit5').click();
       expect("#box1").toHaveText(5);
@@ -25,7 +25,7 @@ describe('Interface', function() {
 
     it('A second roll that dosen\'t make a spare outputs the pins knocked out in the second box', function() { 
       $('#hit5').click();
-      $('#hit3').click();        
+      $('#hit3').click();
       expect("#box1").toHaveText(5);
       expect("#box2").toHaveText(3);
     });
@@ -33,7 +33,7 @@ describe('Interface', function() {
     it('if a spare is made, the output in the 2nd box appears as a /', function() { 
       $('#hit7').click();
       $('#hit3').click();
-      expect("#box2").toHaveText('/');      
+      expect("#box2").toHaveText('/');
     });
 
     it('if a strike is made, the output in the 1st box appears as a X', function() { 
@@ -69,10 +69,10 @@ describe('Interface', function() {
       expect("#box3").toHaveText('X');
       expect("#box4").toBeEmpty();
       expect("#box5").toHaveText('6');
-      expect("#box6").toHaveText('/');  
+      expect("#box6").toHaveText('/');
       expect("#box7").toHaveText('X');
       expect("#box8").toBeEmpty();
-      expect("#box9").toHaveText('7');      
+      expect("#box9").toHaveText('7');
       expect("#box10").toHaveText('/');
       expect("#box11").toHaveText('7');
       expect("#box12").toHaveText('1');
@@ -85,14 +85,14 @@ describe('Interface', function() {
     });
   });
 
-  describe('Playing frame number 10', function() {  
+  describe('Playing frame number 10', function() {
     beforeEach(function() {
       random9FramesGame()
     });
 
     it('writes a / in the 2nd box if a spare is made', function() { 
       $('#hit5').click();
-      $('#hit5').click();        
+      $('#hit5').click();
       expect("#box19").toHaveText('5');
       expect("#box20").toHaveText('/');
     });
@@ -107,47 +107,75 @@ describe('Interface', function() {
     });
   });
 
-  describe('Score displays', function() {  
+  describe('Score displays', function() {
     it('2 first rolls not being spare or strike immediately output the score in the 1st score box', function() { 
       $('#hit5').click();
-      $('#hit3').click();        
+      $('#hit3').click();
       expect("#score1").toHaveText('8');
     });
 
     it('A full game excluding strikes and spares output the 10 correct cumulative scores', function() { 
       $('#hit5').click();
-      $('#hit1').click();        
+      $('#hit1').click();
       expect("#score1").toHaveText('6');
       $('#hit4').click();
-      $('#hit5').click();        
+      $('#hit5').click();
       expect("#score2").toHaveText('15');
       $('#hit5').click();
-      $('#hit2').click();        
+      $('#hit2').click();
       expect("#score3").toHaveText('22');
       $('#hit9').click();
-      $('#hit0').click();        
+      $('#hit0').click();
       expect("#score4").toHaveText('31');
       $('#hit0').click();
-      $('#hit1').click();        
+      $('#hit1').click();
       expect("#score5").toHaveText('32');
       $('#hit7').click();
-      $('#hit2').click();        
+      $('#hit2').click();
       expect("#score6").toHaveText('41');
       $('#hit5').click();
-      $('#hit3').click();        
+      $('#hit3').click();
       expect("#score7").toHaveText('49');
       $('#hit2').click();
-      $('#hit2').click();        
+      $('#hit2').click();
       expect("#score8").toHaveText('53');
       $('#hit8').click();
-      $('#hit0').click();        
+      $('#hit0').click();
       expect("#score9").toHaveText('61');
       $('#hit5').click();
-      $('#hit3').click();        
-      expect("#score10").toHaveText('69');    
+      $('#hit3').click();
+      expect("#score10").toHaveText('69');
     });
 
-    xit('A full game including strikes and spares output the 10 correct cumulative scores', function() { 
+    it('A full game including strikes and spares output the 10 correct cumulative scores', function() { 
+      $('#hit6').click();
+      $('#hit4').click();
+      $('#hit5').click();
+      expect("#score1").toHaveText('15');
+      $('#hit4').click();
+      expect("#score2").toHaveText('24');
+      $('#hit10').click();
+      $('#hit9').click();
+      $('#hit1').click();
+      expect("#score3").toHaveText('44');
+      $('#hit6').click();
+      expect("#score4").toHaveText('60');
+      $('#hit2').click();
+      expect("#score5").toHaveText('68');
+      $('#hit10').click();
+      $('#hit10').click();
+      $('#hit7').click();
+      expect("#score6").toHaveText('95');
+      $('#hit3').click();
+      expect("#score7").toHaveText('115');
+      $('#hit0').click();
+      expect("#score8").toHaveText('125');
+      $('#hit10').click();
+      $('#hit9').click();
+      expect("#score9").toHaveText('144');
+      $('#hit1').click();
+      $('#hit10').click();
+      expect("#score10").toHaveText('164');
     });
 
     xit('A gutter game gives the expected visual results: a big fat 0!', function() { 
@@ -157,7 +185,7 @@ describe('Interface', function() {
     });
   });
 
-  describe('Start a new game', function() {  
+  describe('Start a new game', function() {
     xit('starts with a blank new scoresheet if New Scoresheet is being clicked', function() { 
     });
   });
@@ -168,7 +196,7 @@ function random9FramesGame() {
   $('#hit2').click();
   $('#hit10').click();
   $('#hit6').click();
-  $('#hit4').click(); 
+  $('#hit4').click();
   $('#hit10').click();
   $('#hit7').click();
   $('#hit3').click();
