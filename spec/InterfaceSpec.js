@@ -97,7 +97,13 @@ describe('Interface', function() {
       expect("#box20").toHaveText('/');
     });
 
-    xit('writes a X in all of the 3 boxes if 3 strikes are made', function() { 
+    it('writes a X in all of the 3 boxes if 3 strikes are made', function() { 
+      $('#hit10').click();
+      $('#hit10').click();
+      $('#hit10').click();
+      expect("#box19").toHaveText('X');
+      expect("#box20").toHaveText('X');
+      expect("#box21").toHaveText('X');
     });
   });
 

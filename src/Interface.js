@@ -78,7 +78,7 @@ $(document).ready(function() {
   });
 
   $('#hit10').click(function(){
-    if (game.frameOver == false) {
+    if (game.frameOver == false || game.frameNumber == 10) {
       strikeHappened();
     } else {
       pins = 10;
@@ -89,6 +89,7 @@ $(document).ready(function() {
   function strikeHappened(){
     game.roll(10);
     $('#box'+String(increment)).text('X');
-    increment = increment+2;
+    if (game.frameNumber != 10) { increment = increment+2 } 
+    else { increment++ };
   };
 });
