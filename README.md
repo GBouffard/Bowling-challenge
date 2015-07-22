@@ -50,4 +50,4 @@ open SpecRunner.html
 
 and this is what you should see:
 
-![](public/Jasmine_tests_to_come.png)
+![](public/Jasmine_tests.png)

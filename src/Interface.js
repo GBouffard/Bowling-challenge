@@ -6,14 +6,21 @@ $(document).ready(function() {
 
   function updateScore() {
     game.roll(pins);
+    errorTracker();
     writeInBoxes();
     SparesWritter = game.leftPins
     writeInScores();
     increment++;
   };
 
+  function errorTracker() {
+    $('#error').html('');
+    window.onerror = function () {
+      $('#error').html('You cannot choose that number!');
+    };
+  };
+
   function writeInBoxes() {
-    errorTracker();
     if( SparesWritter == pins && game.frameOver == false) {
       $('#box'+String(increment)).text('/');
     } else {
@@ -24,13 +31,6 @@ $(document).ready(function() {
   function writeInScores() {
     for(n=1;n<11;n++) {
       $('#score'+String(n)).text(game.frameScore[n-1]);
-    };
-  };
-
-  function errorTracker() {
-    $('#error').html('');
-    window.onerror = function () {
-      $('#error').html('You cannot choose that number!');
     };
   };
 
