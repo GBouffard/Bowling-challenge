@@ -1,0 +1,8 @@
+body {
+  background: url("bowlingbackground.jpg") no-repeat; 
+  background-size: cover;
+  text-align:center;
+  font-family: Tahoma, sans-serif;
+  font-size: 15px;
+  color: white;  
+}
