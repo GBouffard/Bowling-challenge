@@ -1,8 +1,16 @@
 body {
-  background: url("bowlingbackground.jpg") no-repeat; 
+  background: url(bowlingbackground.jpg) no-repeat; 
   background-size: cover;
   text-align:center;
   font-family: Tahoma, sans-serif;
   font-size: 15px;
   color: white;  
+}
+
+#logo {
+  background-image: url(transparent_logo.gif);
+  width: 250px; height: 161px;
+  background-size: 100% 100%;
+  display: block;
+  margin: auto;
 }
