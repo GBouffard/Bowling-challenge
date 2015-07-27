@@ -14,3 +14,339 @@ body {
   display: block;
   margin: auto;
 }
+
+
+#lineOfButtons
+{
+    display: inline-block;
+}
+
+#hit0 {
+  background-image: url(0.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin: auto;
+  float:left;
+}
+
+#hit0:hover {
+  background-image: url(0_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin: auto;
+  float:left;
+}
+
+#hit1 {
+  background-image: url(1.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit1:hover {
+  background-image: url(1_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit2 {
+  background-image: url(2.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit2:hover {
+  background-image: url(2_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit3 {
+  background-image: url(3.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit3:hover {
+  background-image: url(3_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit4 {
+  background-image: url(4.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit4:hover {
+  background-image: url(4_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit5 {
+  background-image: url(5.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit5:hover {
+  background-image: url(5_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit6 {
+  background-image: url(6.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit6:hover {
+  background-image: url(6_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit7 {
+  background-image: url(7.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit7:hover {
+  background-image: url(7_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit8 {
+  background-image: url(8.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit8:hover {
+  background-image: url(8_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit9 {
+  background-image: url(9.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit9:hover {
+  background-image: url(9_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit10 {
+  background-image: url(10.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
+
+#hit10:hover {
+  background-image: url(10_over.gif);
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  width: 59px; height: 59px;
+  background-size: 100% 100%;
+  display: block;
+  margin-left: 7px;
+  float:left;
+}
