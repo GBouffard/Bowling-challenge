@@ -96,9 +96,6 @@ $(document).ready(function() {
   function strikeHappened(){
     game.roll(10);
     writeInScores();
-    console.log('Frame:' + game.frameNumber);
-    console.log('Increment' + increment);
-    console.log($('#box17').text()); 
     $('#box'+String(increment)).text('X');
     if ((game.frameNumber != 10) || increment < 18) { increment++ };
     increment++;
