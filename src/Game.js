@@ -32,11 +32,11 @@ Game.prototype.caclulateOnBall1 = function(){
 };
 
 Game.prototype.frame1To9Logic = function(pins) {
-  if (pins === 10 && this.frameOver === false) { this.frameNumber ++ 
-  } else { this.notAStrike(pins); }
+  if (pins === 10 && this.frameOver === false) { this.frameNumber ++;
+  } else { this.notAStrike(); }
 };
 
-Game.prototype.notAStrike = function(pins) {
+Game.prototype.notAStrike = function() {
   if (this.frameOver === true) { this.noStrikeNoSpareCalculator(); }
   this.frameOver = !this.frameOver;
 };
@@ -79,15 +79,15 @@ Game.prototype.strikeCalculator = function(){
 };
 
 Game.prototype.doubleStrikeCalculator = function(){
-  if (this.rolls[this.rolls.length - 3] == 10 && this.rolls[this.rolls.length - 2] == 10 && this.rolls[this.rolls.length - 4] != 0) {
+  if (this.rolls[this.rolls.length - 3] === 10 && this.rolls[this.rolls.length - 2] === 10 && this.rolls[this.rolls.length - 4] !== 0) {
     this.score = this.score + 20 + this.rolls[this.rolls.length - 1];
     this.frameScore.push(this.score);
   }
 };
 
 Game.prototype.closingRoll = function() {
-  if (this.frame10rolls[0] == 10) { this.strikeCalculator();
-  } else if (this.frame10rolls[0] + this.frame10rolls[1] == 10) { this.finalSpareCalculator(); }
+  if (this.frame10rolls[0] === 10) { this.strikeCalculator();
+  } else if (this.frame10rolls[0] + this.frame10rolls[1] === 10) { this.finalSpareCalculator(); }
   this.frameNumber ++;
 };
 
