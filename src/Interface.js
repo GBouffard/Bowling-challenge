@@ -113,6 +113,8 @@ $(document).ready(function() {
     game.frame10rolls = []
     game.frameScore = [];
     game.score = 0;
+    increment = 1;
+    SparesWritter = 10;
   };
 
   function clearTable() {
