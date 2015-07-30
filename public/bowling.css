@@ -354,6 +354,12 @@ body {
   float:left;
 }
 
+#error {
+  position: fixed;
+  margin-left: 42%;
+}
+
+
 table {
   position:relative;
   margin-top:1%;
