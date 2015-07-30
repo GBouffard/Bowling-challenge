@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/GBouffard/Bowling-challenge.svg)](https://travis-ci.org/GBouffard/Bowling-challenge)
 
 :bowling: Bowling Challenge :bowling:
 =================
