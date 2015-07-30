@@ -358,6 +358,7 @@ table {
   position:relative;
   margin-top:1%;
   width: 70%;
+  height: 25%;
   font-family: Tahoma, sans-serif;
   font-size: 14px;
   margin-left: auto;
@@ -374,6 +375,14 @@ tbody {
   font-weight: thin;
 }
 
+tbody td {
+  width: 25px;
+}
+
+tbody tr, tfoot tr {
+  height: 48px;
+}
+
 tfoot {
   background-color: #E60000;
 }
@@ -381,7 +390,7 @@ tfoot {
 th, td {
   border:3px solid #B8B894;
   text-align: center;
-  padding: 18px 2px;
+  padding: 15px 5px;
 }
 
 #newScoreSheet {
