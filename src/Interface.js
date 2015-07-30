@@ -34,57 +34,57 @@ $(document).ready(function() {
     };
   };
 
-  $('#hit0').click(function(){
+  $('#hit0').click(function() {
     pins = 0;
     updateScore();
   });
 
-  $('#hit1').click(function(){
+  $('#hit1').click(function() {
     pins = 1;
     updateScore();
   });
 
-  $('#hit2').click(function(){
+  $('#hit2').click(function() {
     pins = 2;
     updateScore();
   });
 
-  $('#hit3').click(function(){
+  $('#hit3').click(function() {
     pins = 3;
     updateScore();
   });
 
-  $('#hit4').click(function(){
+  $('#hit4').click(function() {
     pins = 4;
     updateScore();
   });
 
-  $('#hit5').click(function(){
+  $('#hit5').click(function() {
     pins = 5;
     updateScore();
   });
 
-  $('#hit6').click(function(){
+  $('#hit6').click(function() {
     pins = 6;
     updateScore();
   });
 
-  $('#hit7').click(function(){
+  $('#hit7').click(function() {
     pins = 7;
     updateScore();
   });
 
-  $('#hit8').click(function(){
+  $('#hit8').click(function() {
     pins = 8;
     updateScore();
   });
 
-  $('#hit9').click(function(){
+  $('#hit9').click(function() {
     pins = 9;
     updateScore();
   });
 
-  $('#hit10').click(function(){
+  $('#hit10').click(function() {
     if (game.frameOver == false || game.frameNumber == 10) {
       strikeHappened();
     } else {
@@ -93,12 +93,20 @@ $(document).ready(function() {
     };
   });
 
-  function strikeHappened(){
+  function strikeHappened() {
     game.roll(10);
     writeInScores();
-    $('#box'+String(increment)).text('X');
+    spareOnFrame10();
     if ((game.frameNumber != 10) || increment < 18) { increment++ };
     increment++;
+  };
+
+  function spareOnFrame10() {
+    if (increment === 20 && ($('#box19').text()) == 0) {
+      $('#box20').text('/');
+    } else {
+      $('#box'+String(increment)).text('X');
+    };
   };
 
   $('#newScoreSheet').click(function(){
@@ -113,6 +121,8 @@ $(document).ready(function() {
     game.frame10rolls = []
     game.frameScore = [];
     game.score = 0;
+    game.frameOn10 = -1;
+    game.frameOn0 = -2;
     increment = 1;
     SparesWritter = 10;
   };
