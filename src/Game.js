@@ -9,8 +9,8 @@ function Game() {
 
 Game.prototype.roll = function(pins){
   this.rollValidation(pins);
-  if (this.frameNumber === 10 ) { this.frame10Logic(pins) }
-  if (this.frameNumber !== 10) { this.frame1To9Logic(pins) }
+  if (this.frameNumber === 10 ) { this.frame10Logic(pins); }
+  if (this.frameNumber !== 10) { this.frame1To9Logic(pins); }
 };
 
 Game.prototype.rollValidation = function(pins) {
@@ -32,7 +32,7 @@ Game.prototype.caclulateOnBall1 = function(){
 };
 
 Game.prototype.frame1To9Logic = function(pins) {
-  if (pins === 10 && this.frameOver == false) { this.frameNumber ++ 
+  if (pins === 10 && this.frameOver === false) { this.frameNumber ++ 
   } else { this.notAStrike(pins) }
 };
 
@@ -63,14 +63,14 @@ Game.prototype.notA10SumCalculator = function() {
   if (this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2] !== 10) {
     this.score = this.score + this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2]
     this.frameScore.push(this.score);
-  };
+  }
 };
 
 Game.prototype.spareCalculator = function(){
   if (this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] === 10 && this.frame10rolls.length < 2) {
     this.score = this.score + 10 + this.rolls[this.rolls.length - 1]
     this.frameScore.push(this.score);
-  };
+  }
 };
 
 Game.prototype.strikeCalculator = function(){
@@ -82,7 +82,7 @@ Game.prototype.doubleStrikeCalculator = function(){
   if (this.rolls[this.rolls.length - 3] == 10 && this.rolls[this.rolls.length - 2] == 10 && this.rolls[this.rolls.length - 4] != 0) {
     this.score = this.score + 20 + this.rolls[this.rolls.length - 1];
     this.frameScore.push(this.score);
-  };
+  }
 };
 
 Game.prototype.closingRoll = function() {
