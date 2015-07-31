@@ -10,7 +10,7 @@ function Game() {
 }
 
 Game.prototype.roll = function(pins){
-  this.rollValidation(pins);
+  this.rollValidation(pins); 
   if (this.frameNumber === 10 ) { this.frame10Logic(pins); }
   if (this.frameNumber !== 10) { this.frame1To9Logic(pins); }
 };
@@ -30,8 +30,8 @@ Game.prototype.validRoll = function(pins) {
 };
 
 Game.prototype.spareExceptions = function(pins){
-  if (pins === 0) { this.frameOn0 = this.frameNumber; }
-  if (pins === 10 && this.frameOver == true) { this.frameOn10 = this.frameNumber; }
+  if (pins === 0 && this.frameOver === false) { this.frameOn0 = this.frameNumber; }
+  if (pins === 10 && this.frameOver === true) { this.frameOn10 = this.frameNumber; }
 };
 
 Game.prototype.caclulateOnBall1 = function(){
@@ -63,7 +63,7 @@ Game.prototype.secondRollat10 = function(){
 
 Game.prototype.noStrikeNoSpareCalculator = function(){
   this.frameNumber ++;
-  if (this.rolls[this.rolls.length - 3] === 10) { this.strikeCalculator(); }
+  if (this.rolls[this.rolls.length - 3] === 10 && (this.rolls[this.rolls.length - 4] !== 0 || this.rolls[this.rolls.length - 2] !== 0)) { this.strikeCalculator(); }
   this.notA10SumCalculator();
 };
 
@@ -75,11 +75,19 @@ Game.prototype.notA10SumCalculator = function() {
 };
 
 Game.prototype.spareCalculator = function(){
-  if (((this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] === 10 && this.rolls[this.rolls.length - 3] !== 10 && this.rolls[this.rolls.length - 2] !== 10) || (this.frameOn10 === this.frameOn0)) && this.frame10rolls.length < 2) {
+  if (( this.spareWithoutA10() || this.spareWithA0AndA10() ) && this.frame10rolls.length < 2) {
     this.score = this.score + 10 + this.rolls[this.rolls.length - 1];
     this.frameScore.push(this.score);
     this.frameOn10 = -1;
   }
+};
+
+Game.prototype.spareWithoutA10 = function(){
+  if (this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] === 10 && this.rolls[this.rolls.length - 3] !== 10 && this.rolls[this.rolls.length - 2] !== 10) return true;
+};
+
+Game.prototype.spareWithA0AndA10 = function(){
+  if ((this.frameOn10 === this.frameOn0) || (this.rolls[this.rolls.length - 3] === 0 && this.rolls[this.rolls.length - 2] === 10 && this.rolls[this.rolls.length - 1] === 0)) return true;
 };
 
 Game.prototype.strikeCalculator = function(){
