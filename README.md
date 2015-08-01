@@ -58,4 +58,4 @@ and this is what you should see:
 
 What can be improved:
 ----
-I over-complicated my approach and debugging such a complicated syntax introduced more and more complicated lines of code. I wished I started differently in the first place to make my life easier but it was a good lesson learnt. I plan to refactor the code or redo this exercise from scratch in the future with a simpler approach. At least, I managed to make it work :)
+I over-complicated my approach and debugging such a complicated syntax introduced more and more complicated lines of code. I wished I started differently in the first place to make my life easier but it was a good lesson learnt. I plan to refactor the code or redo this exercise from scratch in the future with a simpler approach. At least, I managed to make it work :smiley:
