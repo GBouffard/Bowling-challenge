@@ -93,7 +93,7 @@ Game.prototype.spareWithoutA10 = function(){
 };
 
 Game.prototype.spareWithA0AndA10 = function(){
-  if ((this.frameOn10 === this.frameOn0) || (this.rolls[this.rolls.length - 3] === 0 && this.rolls[this.rolls.length - 2] === 10 && this.rolls[this.rolls.length - 1] === 0)) { return true };
+  if ((this.frameOn10 === this.frameOn0) || (this.rolls[this.rolls.length - 3] === 0 && this.rolls[this.rolls.length - 2] === 10 && this.rolls[this.rolls.length - 1] === 0)) { return true; }
 };
 
 Game.prototype.strikeCalculator = function(){
