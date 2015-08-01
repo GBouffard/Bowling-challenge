@@ -100,7 +100,7 @@ Game.prototype.strikeCalculator = function(){
 };
 
 Game.prototype.doubleStrikeCalculator = function(){
-  if (this.rolls[this.rolls.length - 3] === 10 && this.rolls[this.rolls.length - 2] === 10 && this.rolls[this.rolls.length - 4] !== 0) {
+  if (this.rolls[this.rolls.length - 3] === 10 && this.rolls[this.rolls.length - 2] === 10 && this.frameOn0 !== this.frameNumber-2) {
     this.score = this.score + 20 + this.rolls[this.rolls.length - 1];
     this.frameScore.push(this.score);
   }
