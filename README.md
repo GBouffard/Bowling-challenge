@@ -19,7 +19,7 @@ You can find the scoring rules on this wikipedia [link](http://en.wikipedia.org/
 
 Heroku
 ----
-[Guillaume's Bowling Game]()
+[Guillaume's Bowling Game](http://guillaume-bowling.herokuapp.com/)
 
 ![](public/bowling_screenshot.png)
 
