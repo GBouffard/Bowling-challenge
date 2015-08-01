@@ -123,6 +123,7 @@ $(document).ready(function() {
     game.score = 0;
     game.frameOn10 = -1;
     game.frameOn0 = -2;
+    game.itWasASpare = false;
     increment = 1;
     SparesWritter = 10;
   };

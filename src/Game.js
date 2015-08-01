@@ -7,9 +7,11 @@ function Game() {
   this.score = 0;
   this.frameOn10 = -1;
   this.frameOn0 = -2;
+  this.itWasASpare = false;
 }
 
 Game.prototype.roll = function(pins){
+  console.log(this.itWasASpare);
   this.rollValidation(pins); 
   if (this.frameNumber === 10 ) { this.frame10Logic(pins); }
   if (this.frameNumber !== 10) { this.frame1To9Logic(pins); }
@@ -25,13 +27,14 @@ Game.prototype.rollValidation = function(pins) {
 Game.prototype.validRoll = function(pins) {
   if (this.frameOver === false) { this.leftPins = 10 - pins; } else { this.leftPins = 10; }
   this.rolls.push(pins);
-  this.spareExceptions(pins);
+  this.exceptions(pins);
   if (this.frameOver === false && this.frameNumber < 10 ) { this.caclulateOnBall1(); }
 };
 
-Game.prototype.spareExceptions = function(pins){
+Game.prototype.exceptions = function(pins){
   if (pins === 0 && this.frameOver === false) { this.frameOn0 = this.frameNumber; }
   if (pins === 10 && this.frameOver === true) { this.frameOn10 = this.frameNumber; }
+  if (pins !== 10 && pins !== 0 && this.frameOver === false && this.frameOn0 === this.frameOn10 ) { this.itWasASpare = true; }
 };
 
 Game.prototype.caclulateOnBall1 = function(){
@@ -63,7 +66,7 @@ Game.prototype.secondRollat10 = function(){
 
 Game.prototype.noStrikeNoSpareCalculator = function(){
   this.frameNumber ++;
-  if (this.rolls[this.rolls.length - 3] === 10 && (this.rolls[this.rolls.length - 4] !== 0 || this.rolls[this.rolls.length - 2] !== 0)) { this.strikeCalculator(); }
+  if (this.rolls[this.rolls.length - 3] === 10 && this.rolls[this.rolls.length - 2] !== 10 && this.itWasASpare === false ) { this.strikeCalculator(); }
   this.notA10SumCalculator();
 };
 
@@ -71,6 +74,7 @@ Game.prototype.notA10SumCalculator = function() {
   if (this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2] !== 10) {
     this.score = this.score + this.rolls[this.rolls.length - 1] + this.rolls[this.rolls.length - 2];
     this.frameScore.push(this.score);
+    this.itWasASpare = false;
   }
 };
 
@@ -83,11 +87,11 @@ Game.prototype.spareCalculator = function(){
 };
 
 Game.prototype.spareWithoutA10 = function(){
-  if (this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] === 10 && this.rolls[this.rolls.length - 3] !== 10 && this.rolls[this.rolls.length - 2] !== 10) return true;
+  if (this.rolls[this.rolls.length - 2] + this.rolls[this.rolls.length - 3] === 10 && this.rolls[this.rolls.length - 3] !== 10 && this.rolls[this.rolls.length - 2] !== 10) { return true; }
 };
 
 Game.prototype.spareWithA0AndA10 = function(){
-  if ((this.frameOn10 === this.frameOn0) || (this.rolls[this.rolls.length - 3] === 0 && this.rolls[this.rolls.length - 2] === 10 && this.rolls[this.rolls.length - 1] === 0)) return true;
+  if ((this.frameOn10 === this.frameOn0) || (this.rolls[this.rolls.length - 3] === 0 && this.rolls[this.rolls.length - 2] === 10 && this.rolls[this.rolls.length - 1] === 0)) { return true };
 };
 
 Game.prototype.strikeCalculator = function(){
