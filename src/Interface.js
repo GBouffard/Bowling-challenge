@@ -8,31 +8,31 @@ $(document).ready(function() {
     game.roll(pins);
     errorTracker();
     writeInBoxes();
-    SparesWritter = game.leftPins
+    SparesWritter = game.leftPins;
     writeInScores();
     increment++;
-  };
+  }
 
   function errorTracker() {
     $('#error').html('');
     window.onerror = function () {
       $('#error').html('You cannot choose that number!');
     };
-  };
+  }
 
   function writeInBoxes() {
-    if( SparesWritter == pins && game.frameOver == false) {
+    if( SparesWritter === pins && game.frameOver === false) {
       $('#box'+String(increment)).text('/');
     } else {
       $('#box'+String(increment)).text(game.rolls[game.rolls.length -1]);
-    };
-  };
+    }
+  }
 
   function writeInScores() {
     for(n=1;n<11;n++) {
       $('#score'+String(n)).text(game.frameScore[n-1]);
-    };
-  };
+    }
+  }
 
   $('#hit0').click(function() {
     pins = 0;
@@ -85,29 +85,29 @@ $(document).ready(function() {
   });
 
   $('#hit10').click(function() {
-    if (game.frameOver == false || game.frameNumber == 10) {
+    if (game.frameOver === false || game.frameNumber === 10) {
       strikeHappened();
     } else {
       pins = 10;
       updateScore();
-    };
+    }
   });
 
   function strikeHappened() {
     game.roll(10);
     writeInScores();
     spareOnFrame10();
-    if ((game.frameNumber != 10) || increment < 18) { increment++ };
+    if ((game.frameNumber !== 10) || increment < 18) { increment++; }
     increment++;
-  };
+  }
 
   function spareOnFrame10() {
-    if (increment === 20 && ($('#box19').text()) == 0) {
+    if (increment === 20 && ($('#box19').text()) === 0) {
       $('#box20').text('/');
     } else {
       $('#box'+String(increment)).text('X');
-    };
-  };
+    }
+  }
 
   $('#newScoreSheet').click(function(){
     initialValues();
@@ -118,7 +118,7 @@ $(document).ready(function() {
     game.rolls = [];
     game.frameNumber = 1;
     game.frameOver = false;
-    game.frame10rolls = []
+    game.frame10rolls = [];
     game.frameScore = [];
     game.score = 0;
     game.frameOn10 = -1;
@@ -127,14 +127,14 @@ $(document).ready(function() {
     game.itWasAStrike = false;
     increment = 1;
     SparesWritter = 10;
-  };
+  }
 
   function clearTable() {
     for(n=1;n<22;n++) {
       $('#box'+n).text('');
-    };
+    }
     for(n=1;n<11;n++) {
       $('#score'+n).text('');
-    };    
-  };
+    }
+  }
 });
