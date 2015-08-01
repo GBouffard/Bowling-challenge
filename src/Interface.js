@@ -124,6 +124,7 @@ $(document).ready(function() {
     game.frameOn10 = -1;
     game.frameOn0 = -2;
     game.itWasASpare = false;
+    game.itWasAStrike = false;
     increment = 1;
     SparesWritter = 10;
   };
